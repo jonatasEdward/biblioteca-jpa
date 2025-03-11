@@ -30,4 +30,8 @@ public class LivroService {
     public Livro update(Livro livro) {
         return this.save(livro);
     }
+
+    public void teste(){
+    Livro livro = new Livro();
+    }
 }
