@@ -1,10 +1,8 @@
-package com.br.senai.bibliotecajpa;
+package com.br.senai.bibliotecajpa.entidade;
 
 import jakarta.persistence.*;
-import org.springframework.format.annotation.DateTimeFormat;
 
 import java.time.LocalDate;
-import java.time.LocalDateTime;
 import java.util.Objects;
 
 @Entity
@@ -29,6 +27,15 @@ public class Livro {
 
     @Column
     private LocalDate dataCadastro;
+
+    @Column
+    private String isbn;
+
+    @Column
+    private String editora;
+
+    @ManyToOne
+    private Categoria categoria;
 
     public Livro() {
     }
@@ -80,6 +87,30 @@ public class Livro {
 
     public void setQuantidadeDisponivel(Integer quantidadeDisponivel) {
         this.quantidadeDisponivel = quantidadeDisponivel;
+    }
+
+    public String getIsbn() {
+        return isbn;
+    }
+
+    public void setIsbn(String isbn) {
+        this.isbn = isbn;
+    }
+
+    public String getEditora() {
+        return editora;
+    }
+
+    public void setEditora(String editora) {
+        this.editora = editora;
+    }
+
+    public Categoria getCategoria() {
+        return categoria;
+    }
+
+    public void setCategoria(Categoria categoria) {
+        this.categoria = categoria;
     }
 
     public LocalDate getDataCadastro() {

@@ -1,5 +1,7 @@
-package com.br.senai.bibliotecajpa;
+package com.br.senai.bibliotecajpa.service;
 
+import com.br.senai.bibliotecajpa.entidade.Livro;
+import com.br.senai.bibliotecajpa.repository.LivroRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -20,6 +22,10 @@ public class LivroService {
     }
 
     public Livro save(Livro livro) {
+
+        if (livro.getAutor() == null) {
+            throw new RuntimeException("Autor nao encontrado");
+        }
         return this.livroRepository.save(livro);
     }
 

@@ -1,5 +1,7 @@
-package com.br.senai.bibliotecajpa;
+package com.br.senai.bibliotecajpa.controler;
 
+import com.br.senai.bibliotecajpa.entidade.Livro;
+import com.br.senai.bibliotecajpa.service.LivroService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
